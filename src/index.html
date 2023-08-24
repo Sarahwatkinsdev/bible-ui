@@ -148,39 +148,27 @@
       </div>
     </div>
 
-    <div class="row mb-2">
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">Love</strong>
-            <h3 class="mb-0">Saved Verse</h3>
-            <div class="mb-1 text-body-secondary">Nov 12</div>
-            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
-              additional content.</p>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img src="/Photos/Photo2.jpg" alt="" width="200" height="250">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success-emphasis">Patience</strong>
-            <h3 class="mb-0">Saved Verse</h3>
-            <div class="mb-1 text-body-secondary">Nov 11</div>
-            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional
-              content.</p>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img src="/Photos/Photo1.jpg" alt="" width="200" height="250">
-          </div>
-        </div>
-      </div>
+    <div class="row mb-2" id="versecontainer">
     </div>
 
   </main>
-
+  <template id="versetemplate">
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis" id="topic">Promises</strong>
+        <h3 class="mb-0">Saved Verse</h3>
+        <div class="mb-1 text-body-secondary verseref" id="ref">Isaiah 60:19</div>
+        <p class="card-text mb-auto versetext" id="text">The sun shall no longer be your light by day,
+          Nor for brightness shall the moon give light to you; But the Lord will be to you an everlasting light,
+          And your God your glory.</p>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img src="/Photos/Photo2.jpg" alt="" width="200" height="250">
+      </div>
+    </div>
+    </div>
+  </template>
   <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
     <p class="mb-0">
       <a href="#">Back to top</a>
@@ -189,21 +177,21 @@
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+      <form class="Search-Form" id="Search-Form">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Search for a Verse</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form class="Search-Form">
-            <textarea class="form-control" placeholder="Verse keywords" id="floatingTextarea"></textarea>
-          </form>
+            <textarea class="form-control" placeholder="Verse keywords" id="searchquery"></textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Search</button>
+          <button type="submit" class="btn btn-primary dom-submit">Search</button>
         </div>
       </div>
+    </form>
     </div>
   </div>
 
